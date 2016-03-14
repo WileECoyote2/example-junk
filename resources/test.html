@@ -1,0 +1,1789 @@
+			<!DOCTYPE html>
+
+				
+		<p><head>
+	<!--<META HTTP-EQUIV="refresh" CONTENT="3"> this is for a constant refresh rate-->
+		<br />
+		<title>Interactive Rubric</title></p>
+		<style>body{
+		text-align:center;
+		font-family: Tahoma;
+	}
+		table{
+		border-color:#3d3e3c;
+		background-color:#3d3e3c;
+		margin:auto;
+		color: white;
+	}
+		td{
+			min-width:45px;
+			max-width:200px;
+			min-height:20px;
+			max-height: 200px;
+			padding:5px;
+			border-color:#5b5749;
+			border-width:2px;
+	}
+		tr{
+			padding:5px;
+			border-color:#5b5749;
+			max-height: 200px;
+	}</p>
+		#minWidth{
+			min-width:200px;
+	}
+		#a{
+		background-color:#66686e;
+		color:black;
+	}
+	#p{
+		background-color:#66686e;
+		color:black;
+	}
+	#sC{
+		background-color:#66686e;
+		color:black;
+	}
+	#pu{
+		background-color:#66686e;
+		color:black;
+	}
+	#d{
+		background-color:#66686e;
+		color:black;
+	}
+	#s{
+		background-color:#66686e;
+		color:black;
+	}
+	#numbers01{
+		background-color:green;
+		color:black;
+		min-width:200px;
+		font-size: 20px;
+	}
+	#numbers02{
+		background-color:yellow;
+		color:black;
+		min-width:200px;
+		font-size: 20px;
+	}
+	#numbers03{
+		background-color:orange;
+		color:black;
+		min-width:200px;
+		font-size: 20px;
+	}
+	#numbers04{
+		background-color:red;
+		color:black;
+		min-width:200px;
+		font-size: 20px;
+	}
+	#botNumber{
+		background-color:#61615e;
+		color:white;
+		text-align:left;
+		padding-left:15px;
+		font-size:30px;
+	}
+	#score{
+		background-color:#61615e;
+		color:white;
+		text-align:left;
+		padding-left:7px;
+	}
+	#width{
+		min-width:200px;
+	}
+	#scoreTotal{
+		margin:auto;
+	}
+	#changeText01{
+		background-color:#61615e;
+	}
+	#leftColumn{
+		background-color:#61615e;
+		color: white;
+	}
+	</style>
+	<p>	<script type="text/javascript">
+			//a
+				function checkyThingA01(){
+					document.a01.theBox.checked = true;
+					if(document.a01.theBox.checked == true){
+						document.getElementById("a").style.background = "green";
+						//undo other boxes
+							document.a02.theBox.checked = false;
+							document.a03.theBox.checked = false;
+							document.a04.theBox.checked = false;
+						var elem = document.getElementById("changeText01");
+						elem.innerHTML = "3";
+						add();
+					}
+				}
+				function checkyThingA02(){
+					document.a02.theBox.checked = true;
+					if(document.a02.theBox.checked == true){
+						document.getElementById("a").style.background = "yellow";
+						//undo other boxes
+							document.a01.theBox.checked = false;
+							document.a03.theBox.checked = false;
+							document.a04.theBox.checked = false;
+						var elem = document.getElementById("changeText01");
+						elem.innerHTML = "2";
+						add();
+					}
+				}
+				function checkyThingA03(){
+					document.a03.theBox.checked = true;
+					if(document.a03.theBox.checked == true){
+						document.getElementById("a").style.background = "orange";
+						//undo other boxes
+							document.a01.theBox.checked = false;
+							document.a02.theBox.checked = false;
+							document.a04.theBox.checked = false;
+						var elem = document.getElementById("changeText01");
+						elem.innerHTML = "1";
+						add();
+					}
+				}
+				function checkyThingA04(){
+					document.a04.theBox.checked = true;
+					document.getElementById("a").style.background = "red";
+					if(document.a04.theBox.checked == true){
+						//undo other boxes
+							document.a01.theBox.checked = false;
+							document.a02.theBox.checked = false;
+							document.a03.theBox.checked = false;
+						var elem = document.getElementById("changeText01");
+						elem.innerHTML = "0";
+						add();
+					}
+				}
+			//p
+				function checkyThingP01(){
+					document.p01.theBox.checked = true;
+					if(document.p01.theBox.checked == true){
+						document.getElementById("p").style.background = "green";
+						//undo other boxes
+							document.p02.theBox.checked = false;
+							document.p03.theBox.checked = false;
+							document.p04.theBox.checked = false;
+						var elem = document.getElementById("changeText02");
+						elem.innerHTML = "3";
+						add();
+					}
+				}
+				function checkyThingP02(){
+					document.p02.theBox.checked = true;
+					if(document.p02.theBox.checked == true){
+						document.getElementById("p").style.background = "yellow";
+						//undo other boxes
+							document.p01.theBox.checked = false;
+							document.p03.theBox.checked = false;
+							document.p04.theBox.checked = false;
+						var elem = document.getElementById("changeText02");
+						elem.innerHTML = "2";
+						add();
+					}
+				}
+				function checkyThingP03(){
+					document.p03.theBox.checked = true;
+					if(document.p03.theBox.checked == true){
+						document.getElementById("p").style.background = "orange";
+						//undo other boxes
+							document.p01.theBox.checked = false;
+							document.p02.theBox.checked = false;
+							document.p04.theBox.checked = false;
+						var elem = document.getElementById("changeText02");
+						elem.innerHTML = "1";
+						add();
+					}
+				}
+				function checkyThingP04(){
+					document.p04.theBox.checked = true;
+					if(document.p014.theBox.checked == true){
+						document.getElementById("p").style.background = "red";
+						//undo other boxes
+							document.p01.theBox.checked = false;
+							document.p02.theBox.checked = false;
+							document.p03.theBox.checked = false;
+						var elem = document.getElementById("changeText02");
+						elem.innerHTML = "0";
+						add();
+					}
+				}
+			//sC
+				function checkyThingSC01(){
+					document.sC01.theBox.checked = true;
+					if(document.sC01.theBox.checked == true){
+						document.getElementById("sC").style.background = "green";
+						//undo other boxes
+							document.sC02.theBox.checked = false;
+							document.sC03.theBox.checked = false;
+							document.sC04.theBox.checked = false;
+						var elem = document.getElementById("changeText03");
+						elem.innerHTML = "3";
+						add();
+					}
+				}
+				function checkyThingSC02(){
+					document.sC02.theBox.checked = true;
+					if(document.sC02.theBox.checked == true){
+						document.getElementById("sC").style.background = "yellow";
+						//undo other boxes
+							document.sC01.theBox.checked = false;
+							document.sC03.theBox.checked = false;
+							document.sC04.theBox.checked = false;
+						var elem = document.getElementById("changeText03");
+						elem.innerHTML = "2";
+						add();
+					}
+				}
+				function checkyThingSC03(){
+					document.sC03.theBox.checked = true;
+					if(document.sC03.theBox.checked == true){
+						document.getElementById("sC").style.background = "orange";
+						//undo other boxes
+							document.sC01.theBox.checked = false;
+							document.sC02.theBox.checked = false;
+							document.sC04.theBox.checked = false;
+						var elem = document.getElementById("changeText03");
+						elem.innerHTML = "1";
+						add();
+					}
+				}
+				function checkyThingSC04(){
+					document.sC04.theBox.checked = true;
+					if(document.sC04.theBox.checked == true){
+						document.getElementById("sC").style.background = "red";
+						//undo other boxes
+							document.sC01.theBox.checked = false;
+							document.sC02.theBox.checked = false;
+							document.sC03.theBox.checked = false;
+						var elem = document.getElementById("changeText03");
+						elem.innerHTML = "0";
+						add();
+					}
+				}
+			//pu
+				function checkyThingPP01(){
+					document.pu01.theBox.checked = true;
+					if(document.pu01.theBox.checked == true){
+						document.getElementById("pu").style.background = "green";
+						//undo other boxes
+							document.pu02.theBox.checked = false;
+							document.pu03.theBox.checked = false;
+							document.pu04.theBox.checked = false;
+						var elem = document.getElementById("changeText04");
+						elem.innerHTML = "3";
+						add();
+					}
+				}
+				function checkyThingPP02(){
+					document.pu02.theBox.checked = true;
+					if(document.pu02.theBox.checked == true){
+						document.getElementById("pu").style.background = "yellow";
+						//undo other boxes
+							document.pu01.theBox.checked = false;
+							document.pu03.theBox.checked = false;
+							document.pu04.theBox.checked = false;
+						var elem = document.getElementById("changeText04");
+						elem.innerHTML = "2";
+						add();
+					}
+				}
+				function checkyThingPP03(){
+					document.pu03.theBox.checked = true;
+					if(document.pu03.theBox.checked == true){
+						document.getElementById("pu").style.background = "orange";
+						//undo other boxes
+							document.pu01.theBox.checked = false;
+							document.pu02.theBox.checked = false;
+							document.pu04.theBox.checked = false;
+						var elem = document.getElementById("changeText04");
+						elem.innerHTML = "1";
+						add();
+					}
+				}
+				function checkyThingPP04(){
+					document.pu04.theBox.checked = true;
+					if(document.pu04.theBox.checked == true){
+						document.getElementById("pu").style.background = "red";
+						//undo other boxes
+							document.pu01.theBox.checked = false;
+							document.pu02.theBox.checked = false;
+							document.pu03.theBox.checked = false;
+						var elem = document.getElementById("changeText04");
+						elem.innerHTML = "0";
+						add();
+					}
+				}
+			//d
+				function checkyThingD01(){
+					document.d01.theBox.checked = true;
+					if(document.d01.theBox.checked == true){
+						document.getElementById("d").style.background = "green";
+						//undo other boxes
+							document.d02.theBox.checked = false; 
+							document.d03.theBox.checked = false;
+							document.d04.theBox.checked = false;
+						var elem = document.getElementById("changeText05");
+						elem.innerHTML = "3";
+						add();
+					}
+				}
+				function checkyThingD02(){
+					document.d02.theBox.checked = true;
+					if(document.d02.theBox.checked == true){
+						document.getElementById("d").style.background = "yellow";
+						//undo other boxes
+							document.d01.theBox.checked = false;
+							document.d03.theBox.checked = false;
+							document.d04.theBox.checked = false;
+						var elem = document.getElementById("changeText05");
+						elem.innerHTML = "2";
+						add();
+					}
+				}
+				function checkyThingD03(){
+					document.d03.theBox.checked = true;
+					if(document.d03.theBox.checked == true){
+						document.getElementById("d").style.background = "orange";
+						//undo other boxes
+							document.d01.theBox.checked = false;
+							document.d02.theBox.checked = false;
+							document.d04.theBox.checked = false;
+						var elem = document.getElementById("changeText05");
+						elem.innerHTML = "1";
+						add();
+					}
+				}
+				function checkyThingD04(){
+					document.d04.theBox.checked = true;
+					if(document.d04.theBox.checked == true){
+						document.getElementById("d").style.background = "red";
+						//undo other boxes=
+							document.d01.theBox.checked = false;
+							document.d02.theBox.checked = false;
+							document.d03.theBox.checked = false;
+						var elem = document.getElementById("changeText05");
+						elem.innerHTML = "0";
+						add();
+					}
+				}
+			//s
+				function checkyThingS01(){
+					document.s01.theBox.checked = true;
+					if(document.s01.theBox.checked == true){
+						document.getElementById("s").style.background = "green";
+						//undo other boxes
+							document.s02.theBox.checked = false;
+							document.s03.theBox.checked = false;
+							document.s04.theBox.checked = false;
+						var elem = document.getElementById("changeText06");
+						elem.innerHTML = "3";
+						add();
+					}
+				}
+				function checkyThingS02(){
+					document.s02.theBox.checked = true;
+					if(document.s02.theBox.checked == true){
+						document.getElementById("s").style.background = "yellow";
+						//undo other boxes
+							document.s01.theBox.checked = false;
+							document.s03.theBox.checked = false;
+							document.s04.theBox.checked = false;
+						var elem = document.getElementById("changeText06");
+						elem.innerHTML = "2";
+						add();
+					}
+				}
+				function checkyThingS03(){
+					document.s03.theBox.checked = true;
+					if(document.s03.theBox.checked == true){
+						document.getElementById("s").style.background = "orange";
+						//undo other boxes
+							document.s01.theBox.checked = false;
+							document.s02.theBox.checked = false;
+							document.s04.theBox.checked = false;
+						var elem = document.getElementById("changeText06");
+						elem.innerHTML = "1";
+						add();
+					}
+				}
+				function checkyThingS04(){
+					document.s04.theBox.checked = true;
+					if(document.s04.theBox.checked == true){
+						document.getElementById("s").style.background = "red";
+						//undo other boxes
+							document.s01.theBox.checked = false;
+							document.s02.theBox.checked = false;
+							document.s03.theBox.checked = false;
+						var elem = document.getElementById("changeText06");
+						elem.innerHTML = "0";
+						add();
+					}
+				}
+				
+				//Selectors...?
+					*function selectorMax(){
+						if (document.a01.theBox.checked == true && document.p01.theBox.checked == true && document.sC01.theBox.checked == true && document.pu01.theBox.checked == true && document.d01.theBox.checked == true && document.s01.theBox.checked == true) {
+								document.a01.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.p01.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+								document.sC01.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+								document.pu01.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+								document.d01.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+								document.s01.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							}
+						else{
+								document.a01.theBox.checked = true
+								document.getElementById("a").style.background = "green";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "3";
+								document.p01.theBox.checked = true
+								document.getElementById("p").style.background = "green";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "3";
+								document.sC01.theBox.checked = true
+								document.getElementById("sC").style.background = "green";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "3";
+								document.pu01.theBox.checked = true
+								document.getElementById("pu").style.background = "green";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "3";
+								document.d01.theBox.checked = true
+								document.getElementById("d").style.background = "green";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "3";
+								document.s01.theBox.checked = true
+								document.getElementById("s").style.background = "green";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "3";
+						}
+						add();
+					}
+					function selectorTwo(){
+						if (document.a02.theBox.checked == true && document.p02.theBox.checked == true && document.sC02.theBox.checked == true && document.pu02.theBox.checked == true && document.d02.theBox.checked == true && document.s02.theBox.checked == true) {
+								document.a02.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a03.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.p02.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p03.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+								document.sC02.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC03.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+								document.pu02.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu03.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+								document.d02.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d03.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+								document.s02.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s03.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							}
+						else{
+								document.a02.theBox.checked = true
+								document.getElementById("a").style.background = "yellow";
+								//undo other boxes
+								document.a03.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "2";
+								document.p02.theBox.checked = true
+								document.getElementById("p").style.background = "yellow";
+								//undo other boxes
+								document.p03.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "2";
+								document.sC02.theBox.checked = true
+								document.getElementById("sC").style.background = "yellow";
+								//undo other boxes
+								document.sC03.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "2";
+								document.pu02.theBox.checked = true
+								document.getElementById("pu").style.background = "yellow";
+								//undo other boxes
+								document.pu03.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "2";
+								document.d02.theBox.checked = true
+								document.getElementById("d").style.background = "yellow";
+								//undo other boxes
+								document.d03.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "2";
+								document.s02.theBox.checked = true
+								document.getElementById("s").style.background = "yellow";
+								//undo other boxes
+								document.s03.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "2";
+						}
+						add();
+					}
+					function selectorUno(){
+						if (document.a03.theBox.checked == true && document.p03.theBox.checked == true && document.sC03.theBox.checked == true && document.pu03.theBox.checked == true && document.d03.theBox.checked == true && document.s03.theBox.checked == true) {
+								document.a03.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.p03.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+								document.sC03.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+								document.pu03.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+								document.d03.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+								document.s03.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							}
+						else{
+								document.a03.theBox.checked = true
+								document.getElementById("a").style.background = "orange";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "1";
+								document.p03.theBox.checked = true
+								document.getElementById("p").style.background = "orange";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "1";
+								document.sC03.theBox.checked = true
+								document.getElementById("sC").style.background = "orange";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "1";
+								document.pu03.theBox.checked = true
+								document.getElementById("pu").style.background = "orange";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "1";
+								document.d03.theBox.checked = true
+								document.getElementById("d").style.background = "orange";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "1";
+								document.s03.theBox.checked = true
+								document.getElementById("s").style.background = "orange";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "1";
+						}
+						add();
+					}
+					
+					//URGENT CHECK THIS
+					function selectorNon(){
+							if (document.a04.theBox.checked == true && document.p04.theBox.checked == true && document.sC04.theBox.checked == true && document.pu04.theBox.checked == true && document.d04.theBox.checked == true && document.s04.theBox.checked == true) {
+								document.a04.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.p04.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.sC04.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.pu04.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.d04.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.s04.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+							}
+						else{
+								document.a04.theBox.checked = true
+								document.getElementById("a").style.background = "red";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+								document.p04.theBox.checked = true
+								document.getElementById("p").style.background = "red";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+								document.sC04.theBox.checked = true
+								document.getElementById("sC").style.background = "red";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+								document.pu04.theBox.checked = true
+								document.getElementById("pu").style.background = "red";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+								document.d04.theBox.checked = true
+								document.getElementById("d").style.background = "red";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+								document.s04.theBox.checked = true
+								document.getElementById("s").style.background = "red";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							add();
+						}
+						}
+
+					function reset() {
+    					//backup
+    					//location.reload();
+    					document.a01.theBox.checked = false;			
+						document.a02.theBox.checked = false;
+						document.a03.theBox.checked = false;
+						document.a04.theBox.checked = false;
+						var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0"
+								document.getElementById("a").style.background = "#9EABB2";
+						document.p01.theBox.checked = false;			
+						document.p02.theBox.checked = false;
+						document.p03.theBox.checked = false;
+						document.p04.theBox.checked = false;
+						var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0"
+								document.getElementById("p").style.background = "#9EABB2";
+						document.sC01.theBox.checked = false;			
+						document.sC02.theBox.checked = false;
+						document.sC03.theBox.checked = false;
+						document.sC04.theBox.checked = false;
+						var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0"
+								document.getElementById("sC").style.background = "#9EABB2";
+						document.pu01.theBox.checked = false;
+						document.pu02.theBox.checked = false;
+						document.pu03.theBox.checked = false;
+						document.pu04.theBox.checked = false;
+						var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0"
+								document.getElementById("pu").style.background = "#9EABB2";
+						document.d01.theBox.checked = false;			
+						document.d02.theBox.checked = false;
+						document.d03.theBox.checked = false;
+						document.d04.theBox.checked = false;
+						var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0"
+								document.getElementById("d").style.background = "#9EABB2";
+						document.s01.theBox.checked = false;			
+						document.s02.theBox.checked = false;
+						document.s03.theBox.checked = false;
+						document.s04.theBox.checked = false;
+						var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0"
+								document.getElementById("s").style.background = "#9EABB2";
+						add();
+						clearbotNumber();						
+					}
+					/*//author selector/deselector
+						function testa01(){
+							if (document.a01.theBox.checked == true) {
+								document.a01.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.a01.theBox.checked = true
+								document.getElementById("a").style.background = "green";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testa02(){
+							if (document.a02.theBox.checked == true) {
+								document.a02.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a01.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.a02.theBox.checked = true
+								document.getElementById("a").style.background = "yellow";
+								//undo other boxes
+								document.a01.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "2";
+							}
+							add();
+						}
+						function testa03(){
+							if (document.a03.theBox.checked == true) {
+								document.a03.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								document.getElementById("changeText01").reset;
+							}
+							else{
+								document.a03.theBox.checked = true
+								document.getElementById("a").style.background = "orange";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								document.a04.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "1";
+							}
+							add();
+						}
+						function testa04(){
+							if (document.a04.theBox.checked == true) {
+								document.a04.theBox.checked = false
+								document.getElementById("a").style.background = "#9EABB2";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.a04.theBox.checked = true
+								document.getElementById("a").style.background = "red";
+								//undo other boxes
+								document.a02.theBox.checked = false;
+								document.a01.theBox.checked = false;
+								document.a03.theBox.checked = false;
+								var elem = document.getElementById("changeText01");
+							elem.innerHTML = "0";
+							}
+							add();
+						}
+					//publisher select/deselect
+						function testp01(){
+							if (document.p01.theBox.checked == true) {
+								document.p01.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.p01.theBox.checked = true
+								document.getElementById("p").style.background = "green";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testp02(){
+							if (document.p02.theBox.checked == true) {
+								document.p02.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p01.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.p02.theBox.checked = true
+								document.getElementById("p").style.background = "yellow";
+								//undo other boxes
+								document.p01.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testp03(){
+							if (document.p03.theBox.checked == true) {
+								document.p03.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.p03.theBox.checked = true
+								document.getElementById("p").style.background = "orange";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								document.p04.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testp04(){
+							if (document.p04.theBox.checked == true) {
+								document.p04.theBox.checked = false
+								document.getElementById("p").style.background = "#9EABB2";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.p04.theBox.checked = true
+								document.getElementById("p").style.background = "red";
+								//undo other boxes
+								document.p02.theBox.checked = false;
+								document.p03.theBox.checked = false;
+								document.p01.theBox.checked = false;
+								var elem = document.getElementById("changeText02");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+
+					//Sources Cited Sel/desel
+						function testsC01(){
+							if (document.sC01.theBox.checked == true) {
+								document.sC01.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.sC01.theBox.checked = true
+								document.getElementById("sC").style.background = "green";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testsC02(){
+							if (document.sC02.theBox.checked == true) {
+								document.sC02.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC01.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.sC02.theBox.checked = true
+								document.getElementById("sC").style.background = "yellow";
+								//undo other boxes
+								document.sC01.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testsC03(){
+							if (document.sC03.theBox.checked == true) {
+								document.sC03.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.sC03.theBox.checked = true
+								document.getElementById("sC").style.background = "orange";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								document.sC04.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testsC04(){
+							if (document.sC04.theBox.checked == true) {
+								document.sC04.theBox.checked = false
+								document.getElementById("sC").style.background = "#9EABB2";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.sC04.theBox.checked = true
+								document.getElementById("sC").style.background = "red";
+								//undo other boxes
+								document.sC02.theBox.checked = false;
+								document.sC03.theBox.checked = false;
+								document.sC01.theBox.checked = false;
+								var elem = document.getElementById("changeText03");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+
+					//Purpose sel/desel
+						function testpu01(){
+							if (document.pu01.theBox.checked == true) {
+								document.pu01.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.pu01.theBox.checked = true
+								document.getElementById("pu").style.background = "green";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testpu02(){
+							if (document.pu02.theBox.checked == true) {
+								document.pu02.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu01.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.pu02.theBox.checked = true
+								document.getElementById("pu").style.background = "yellow";
+								//undo other boxes
+								document.pu01.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testpu03(){
+							if (document.pu03.theBox.checked == true) {
+								document.pu03.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.pu03.theBox.checked = true
+								document.getElementById("pu").style.background = "orange";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								document.pu04.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testpu04(){
+							if (document.pu04.theBox.checked == true) {
+								document.pu04.theBox.checked = false
+								document.getElementById("pu").style.background = "#9EABB2";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.pu04.theBox.checked = true
+								document.getElementById("pu").style.background = "red";
+								//undo other boxes
+								document.pu02.theBox.checked = false;
+								document.pu03.theBox.checked = false;
+								document.pu01.theBox.checked = false;
+								var elem = document.getElementById("changeText04");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+					//Date sel/desel
+						function testd01(){
+							if (document.d01.theBox.checked == true) {
+								document.d01.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.d01.theBox.checked = true
+								document.getElementById("d").style.background = "green";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testd02(){
+							if (document.d02.theBox.checked == true) {
+								document.d02.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d01.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.d02.theBox.checked = true
+								document.getElementById("d").style.background = "yellow";
+								//undo other boxes
+								document.d01.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testd03(){
+							if (document.d03.theBox.checked == true) {
+								document.d03.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.d03.theBox.checked = true
+								document.getElementById("d").style.background = "orange";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								document.d04.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function testd04(){
+							if (document.d04.theBox.checked == true) {
+								document.d04.theBox.checked = false
+								document.getElementById("d").style.background = "#9EABB2";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.d04.theBox.checked = true
+								document.getElementById("d").style.background = "red";
+								//undo other boxes
+								document.d02.theBox.checked = false;
+								document.d03.theBox.checked = false;
+								document.d01.theBox.checked = false;
+								var elem = document.getElementById("changeText05");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+					//Substance sel/desel
+						function tests01(){
+							if (document.s01.theBox.checked == true) {
+								document.s01.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.s01.theBox.checked = true
+								document.getElementById("s").style.background = "green";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function tests02(){
+							if (document.s02.theBox.checked == true) {
+								document.s02.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s01.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.s02.theBox.checked = true
+								document.getElementById("s").style.background = "yellow";
+								//undo other boxes
+								document.s01.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function tests03(){
+							if (document.s03.theBox.checked == true) {
+								document.s03.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.s03.theBox.checked = true
+								document.getElementById("s").style.background = "orange";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								document.s04.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "3";
+							}
+							add();
+						}
+						function tests04(){
+							if (document.s04.theBox.checked == true) {
+								document.s04.theBox.checked = false
+								document.getElementById("s").style.background = "#9EABB2";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "0";
+							}
+							else{
+								document.s04.theBox.checked = true
+								document.getElementById("s").style.background = "red";
+								//undo other boxes
+								document.s02.theBox.checked = false;
+								document.s03.theBox.checked = false;
+								document.s01.theBox.checked = false;
+								var elem = document.getElementById("changeText06");
+							elem.innerHTML = "3";
+							}
+							add();
+						}*/
+						
+				
+		</script><br />
+	</head><br />
+	<body></p>
+	<A HREF="javascript:history.go(0)"><input type="button" value="MasterReset"></input></A><br><br>
+	<form><input type="checkbox" onclick="selectorAll();"></input></form>
+	<table border="2">
+	<tr>
+		<td style="cursor: pointer;" id="score" colspan="2" onclick="reset()" title="Click here to reset">Score</td>
+		<td style="cursor: pointer;" id="numbers01" onclick="selectorMax()" title="Click here to select all 3">3</td>
+		<td style="cursor: pointer;" id="numbers02" onclick="selectorTwo()" title="Click here to select all 2">2</td>
+		<td style="cursor: pointer;" id="numbers03" onclick="selectorUno()" title="Click here to select all 1">1</td>
+		<td style="cursor: pointer;" id="numbers04" onclick="selectorNon()" title="Click here to select all 0">0</td>
+	</tr>
+	<tr id="a">
+		<td style="cursor: default;" id="leftColumn">
+			<div id="changeText01" >0</div>
+	</td>
+		<td style="cursor: default;" id="width"><u><strong>Author:</strong></u><br />What are the author&#8217;s credentials and affiliation? Is the author an expert?<br>
+
+	</td>
+		<td style="cursor: pointer;" id="a01" onclick="testa01();">
+	<form name="a01"><input type="checkbox" name="theBox" onClick="testa01();" /></form>
+	The author&#8217;s credentials indicate that he/she is an expert on this topic. The author gives contact info or professional affiliation.</td>
+		<td style="cursor: pointer;" id="a02" onclick="testa02();">
+	<form name="a02"><input type="checkbox" name="theBox" onClick="testa02();" /></form>
+	The author is named but credentials and/or contact info (online sources) is incomplete.</td>
+		<td style="cursor: pointer;" id="a03" onclick="testa03();">
+	<form name="a03"><input type="checkbox" name="theBox" onClick="testa03();" /></form>
+	The author is unnamed and/or no credentials are given.</td>
+		<td style="cursor: pointer;" id="a04" onclick="testa04();">
+	<form name="a04"><input type="checkbox" name="theBox" onClick="testa04();" /></form>
+	The author is named, but is clearly not an expert on the topic (published by student or fans).</td>
+	</tr>
+	<tr id="p">
+		<td style="cursor: default;" id="leftColumn">
+			<div id="changeText02" >0</div>
+	</td>
+		<td style="cursor: default;"><u><strong>Publisher:</strong></u><br />Is the source published by a reputable publisher or organization?<br>
+
+	</td>
+		<td style="cursor: pointer;" id="p01" onclick="testp01();">
+	<form name="p01"><input type="checkbox" name="theBox" onClick="testp01();" /></form>
+
+	Published by:<br />*U.S. Government (.gov)<br />*Scholarly Journal or in a Reference or academic book</td>
+		<td style="cursor: pointer;" id="p02" onclick="testp02();">
+	<form name="p02"><input type="checkbox" name="theBox" onClick="testp02();" /></form>
+
+	Published by a known:<br />*organization<br />*university<br />*business<br />*magazine/newspaper or in a print book</td>
+		<td style="cursor: pointer;" id="p03" onclick="testp03();">
+	<form name="p03"><input type="checkbox" name="theBox" onClick="testp03();" /></form>
+
+	Published by:<br />*a K-12 school<br />*an unknown business(.com)<br />*an unknown organization (.org).</td>
+		<td style="cursor: pointer;" id="p04" onclick="testp04();">
+	<form name="p04"><input type="checkbox" name="theBox" onClick="testp04();" /></form>
+
+	Self-published:<br />blogs, personal web pages, etc.<br />Look for the symbols ~% or the words &#8220;users&#8221; &#8220;members&#8221; etc. 	in the URL</td>	
+	</tr>
+	<tr id="sC">
+		<td style="cursor: default;" id="leftColumn">
+			<div id="changeText03" >0</div>
+	</td>
+		<td style="cursor: default;"><u><strong>Sources Cited:</strong></u><br />Is the information cited?<br>
+
+	</td>
+		<td style="cursor: pointer;" id="sC01" onclick="testsC01();">
+	<form name="sC01"><input type="checkbox" name="theBox" onClick="testsC01();" /></form>
+
+	The work is original research/info by a reputable source.  There is a Works Cited list and/or a Bibliography.</td>
+		<td style="cursor: pointer;" id="sC02" onclick="testsC02();">
+	<form name="sC02"><input type="checkbox" name="theBox" onClick="testsC02();" /></form>
+
+	The work is a compilation of research/info by a reputable source. No Works Cited information as a list.</td>
+		<td style="cursor: pointer;" id="sC03" onclick="testsC03();">
+	<form name="sC03"><input type="checkbox" name="theBox" onClick="testsC03();" /></form>
+
+	There is a statement about the source of information embedded in the source, but no Works Cited list.</td>
+		<td style="cursor: pointer;" id="sC04" onclick="testsC04();">
+	<form name="sC04"><input type="checkbox" name="theBox" onClick="testsC04();" /></form>
+
+	There is a statement about the source of information embedded in the source, but no Works Cited list.</td>
+	</tr>
+	<tr id="pu">
+		<td style="cursor: default;" id="leftColumn">
+			<div id="changeText04" >0</div>
+	</td>
+		<td style="cursor: default;"><u><strong>Purpose:</strong></u><br />Why was this information published?<br>
+
+	</td>
+		<td style="cursor: pointer;" id="pu01" onclick="testpu01();">
+	<form name="pu01"><input type="checkbox" name="theBox" onClick="testpu01();" /></form>
+
+	To promote scholarly research.</td>
+		<td style="cursor: pointer;" id="pu02" onclick="testpu02();">
+	<form name="pu02"><input type="checkbox" name="theBox" onClick="testpu02();" /></form>
+
+	To provide factual information. Some opinion may be included.</td>
+		<td style="cursor: pointer;" id="pu03" onclick="testpu03();">
+	<form name="pu03"><input type="checkbox" name="theBox" onClick="testpu03();" /></form>
+
+	To sell something, to persuade, or to promote an idea.</td>
+		<td style="cursor: pointer;" id="pu04" onclick="testpu04();">
+	<form name="pu04"><input type="checkbox" name="theBox" onClick="testpu04();" /></form>
+
+	For personal or entertainment purpose.</td>
+	</tr>
+	<tr id="d">
+		<td style="cursor: default;" id="leftColumn">
+			<div id="changeText05" >0</div>
+	</td>
+		<td style="cursor: default;"><u><strong>Date:</strong></u><br />How current is the information?<br>
+
+	</td>
+		<td style="cursor: pointer;" id="d01" onclick="testd01();">
+	<form name="d01"><input type="checkbox" name="theBox" onClick="testd01();" /></form>
+
+	Online:<br />The info is less than 1 year old.<br />Print:<br />The info is less than 3 years old</td>
+		<td style="cursor: pointer;" id="d02" onclick="testd02();">
+	<form name="d02"><input type="checkbox" name="theBox" onClick="testd02();" /></form>
+
+	Online:<br />The info is less than 3 years old.<br />Print:<br />The information is more than 3 years old, but is not necessarily out of date.</td>
+		<td style="cursor: pointer;" id="d03" onclick="testd03();">
+	<form name="d03"><input type="checkbox" name="theBox" onClick="testd03();" /></form>
+
+	The information is more than five years old.</td>
+		<td style="cursor: pointer;" id="d04" onclick="testd04();">
+	<form name="d04"><input type="checkbox" name="theBox" onClick="testd04();" /></form>
+
+	There is no indication of when the information was published.</td>
+	</tr>
+	<tr id="s">
+		<td style="cursor: default;" id="leftColumn">
+			<div id="changeText06" >0</div>
+	</td>
+		<td style="cursor: default;"><u><strong>Substance:<br>
+
+	</strong></u></td>
+		<td style="cursor: pointer;" id="s01" onclick="tests01();">
+	<form name="s01"><input type="checkbox" name="theBox" onClick="tests01();" /></form>
+
+	Depth of coverage needed for your purpose and written at a college or professional level.</td>
+		<td style="cursor: pointer;" id="s02" onclick="tests02();">
+	<form name="s02"><input type="checkbox" name="theBox" onClick="tests02();" /></form>
+
+	Written for the general public.</td>
+		<td style="cursor: pointer;" id="s03" onclick="tests03();">
+	<form name="s03"><input type="checkbox" name="theBox" onClick="tests03();" /></form>
+
+	Lacking the depth needed for your purpose.</td>
+		<td style="cursor: pointer;" id="s04" onclick="tests04();">
+	<form name="s04"><input type="checkbox" name="theBox" onClick="tests04();" /></form>
+
+	No depth, contains excessive colloquialisms, slang, use of &#8220;I&#8221;</td>
+	</tr>
+	<tr>
+		<td style="cursor: default;" id="botNumber" colspan="6">
+			<div id="total">0</div>
+	</td>
+	</tr>
+	</table>
+			<div id="scoreTotal">
+	<h4>Score Totals:</h4>
+	<h5 id="red" >0-6: This source is highly questionable. Should not be used in research without suitable justification. (Attach your reasons for 	using a source with this score).</h5>
+	<h5 id="orange">7-10: The site may be an acceptable starting point for gathering information, but may not be suitable as a cited source in a research project.</h5>
+	<h5 id="yellow">11-14: Good source for research. Information should be confirmed in other sources.</h5>
+	<h5 id="green">15-18: Excellent source for research purpose.</h5>
+	</p></div>
+	<p>	<script type="text/javascript">
+			function add(){
+				var elem = document.getElementById("total");
+				var a = 0;
+				var p = 0;
+				var sC = 0;
+				var pu = 0;
+				var d = 0;
+				var s = 0;
+				if(document.a01.theBox.checked == true){
+					var a = 3;}
+				if(document.a02.theBox.checked == true){
+					var a = 2;}
+				if(document.a03.theBox.checked == true){
+					var a = 1;}
+				if(document.a04.theBox.checked == true){
+					var a = 0;}
+				if(document.p01.theBox.checked == true){
+					var p = 3;}
+				if(document.p02.theBox.checked == true){
+					var p = 2;}
+				if(document.p03.theBox.checked == true){
+					var p = 1;}
+				if(document.p04.theBox.checked == true){
+					var p = 0;}
+				if(document.sC01.theBox.checked == true){
+					var sC = 3;}
+				if(document.sC02.theBox.checked == true){
+					var sC = 2;}
+				if(document.sC03.theBox.checked == true){
+					var sC = 1;}
+				if(document.sC04.theBox.checked == true){
+					var sC = 0;}
+				if(document.pu01.theBox.checked == true){
+					var pu = 3;}
+				if(document.pu02.theBox.checked == true){
+					var pu = 2;}
+				if(document.pu03.theBox.checked == true){
+					var pu = 1;}
+				if(document.pu04.theBox.checked == true){
+					var pu = 0;}
+				if(document.d01.theBox.checked == true){
+					var d = 3;}
+				if(document.d02.theBox.checked == true){
+					var d = 2;}
+				if(document.d03.theBox.checked == true){
+					var d = 1;}
+				if(document.d04.theBox.checked == true){
+					var d = 0;}
+				if(document.s01.theBox.checked == true){
+					var s = 3;}
+				if(document.s02.theBox.checked == true){
+					var s = 2;}
+				if(document.s03.theBox.checked == true){
+					var s = 1;}
+				if(document.s04.theBox.checked == true){
+					var s = 0;}
+				elem.innerHTML = a + p + sC + pu + d + s;
+				if(elem.innerHTML >= 0 && elem.innerHTML <= 6){
+					document.getElementById("red").style.background = "red";
+					document.getElementById("orange").style.background = "white";
+					document.getElementById("yellow").style.background = "white";
+					document.getElementById("green").style.background = "white";}
+				if(elem.innerHTML > 6 && elem.innerHTML <= 10){
+					document.getElementById("red").style.background = "white";
+					document.getElementById("orange").style.background = "orange";
+					document.getElementById("yellow").style.background = "white";
+					document.getElementById("green").style.background = "white";}
+				if(elem.innerHTML > 10 && elem.innerHTML <= 14){
+					document.getElementById("red").style.background = "white";
+					document.getElementById("orange").style.background = "white";
+					document.getElementById("yellow").style.background = "yellow";
+					document.getElementById("green").style.background = "white";}
+				if(elem.innerHTML > 14 && elem.innerHTML <= 18){
+					document.getElementById("red").style.background = "white";
+					document.getElementById("orange").style.background = "white";
+					document.getElementById("yellow").style.background = "white";
+					document.getElementById("green").style.background = "green";}
+				if (document.theBox.checked) {}
+			}
+		function clearbotNumber(){
+					document.getElementById("red").style.background = "white";
+					document.getElementById("orange").style.background = "white";
+					document.getElementById("yellow").style.background = "white";
+					document.getElementById("green").style.background = "white";
+		}
+		/*function addv2(){
+				var elem = document.getElementById("total");
+				var a = 0;
+				var p = 0;
+				var sC = 0;
+				var pu = 0;
+				var d = 0;
+				var s = 0;
+				if(document.a01.theBox.checked == true){
+					var a = 3;}
+				if(document.a02.theBox.checked == true){
+					var a = 2;}
+				if(document.a03.theBox.checked == true){
+					var a = 1;}
+				if(document.a04.theBox.checked == true){
+					var a = 0;}
+				if(document.p01.theBox.checked == true){
+					var p = 3;}
+				if(document.p02.theBox.checked == true){
+					var p = 2;}
+				if(document.p03.theBox.checked == true){
+					var p = 1;}
+				if(document.p04.theBox.checked == true){
+					var p = 0;}
+				if(document.sC01.theBox.checked == true){
+					var sC = 3;}
+				if(document.sC02.theBox.checked == true){
+					var sC = 2;}
+				if(document.sC03.theBox.checked == true){
+					var sC = 1;}
+				if(document.sC04.theBox.checked == true){
+					var sC = 0;}
+				if(document.pu01.theBox.checked == true){
+					var pu = 3;}
+				if(document.pu02.theBox.checked == true){
+					var pu = 2;}
+				if(document.pu03.theBox.checked == true){
+					var pu = 1;}
+				if(document.pu04.theBox.checked == true){
+					var pu = 0;}
+				if(document.d01.theBox.checked == true){
+					var d = 3;}
+				if(document.d02.theBox.checked == true){
+					var d = 2;}
+				if(document.d03.theBox.checked == true){
+					var d = 1;}
+				if(document.d04.theBox.checked == true){
+					var d = 0;}
+				if(document.s01.theBox.checked == true){
+					var s = 3;}
+				if(document.s02.theBox.checked == true){
+					var s = 2;}
+				if(document.s03.theBox.checked == true){
+					var s = 1;}
+				if(document.s04.theBox.checked == true){
+					var s = 0;}
+				
+			}*/
+
+		</script><br />
+	</body><br />
+	</html></p>
+
+				</div> <!-- .et_pb_text -->
+				</div> <!-- .et_pb_column -->
+						
+				</div> <!-- .et_pb_row -->
+					
+				</div> <!-- .et_pb_section -->
+						</div> <!-- .entry-content -->
+
+				
+				</article> <!-- .et_pb_post -->
+
+			
+
+	</div> <!-- #main-content -->
+
+
+			
+
+		</body>
+	</html>
